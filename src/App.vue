@@ -2,6 +2,8 @@
   <section id="App">
     <main>
       <HomePage />
+
+      <router-view></router-view>
     </main>
   </section>
 </template>
