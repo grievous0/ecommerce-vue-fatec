@@ -2,8 +2,8 @@
     <section class="product-line">
       <div class="messages">
         <h3 class="message">
-          <span class="underline">Free</span> shipping in
-          <span class="underline">all</span> products, no matter the price.
+          <span class="underline">Frete grátis</span> em
+          <span class="underline">toda loja.</span>
         </h3>
       </div>
       <div class="discounted">
@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="title">
-                <span class="highlight"><b>discounted</b></span> Products
+                Produtos com<span class="highlight"><b> Desconto</b></span> 
               </h2>
               <div
                 id="trendingCarousel"
@@ -47,35 +47,14 @@
                         <div class="thumb-wrapper">
                           <div class="img-box">
                             <img
-                              src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SL1500_.jpg"
-                              class="img-fluid"
-                              alt=""
+                              :src = "this.products[13].image"
                             />
                           </div>
                           <div class="thumb-content">
-                            <h4>iPad Air</h4>
+                            <h4>{{ this.products[13].title }}</h4>
                             <p class="item-price">
-                              <strike>$700.00</strike> <span>$569.00</span>
+                              <strike>R$1200</strike> <span>R${{ this.products[13].price }}</span>
                             </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
                             <a href="#" class="btn btn-primary"
                               ><i class="fa-solid fa-cart-plus"></i
                             ></a>
@@ -87,8 +66,6 @@
                           <div class="img-box">
                             <img
                               src="https://m.media-amazon.com/images/I/81MB7dHmPVL._AC_SL1500_.jpg"
-                              class="img-fluid"
-                              alt=""
                             />
                           </div>
                           <div class="thumb-content">
@@ -552,13 +529,13 @@
           <div class="card">
             <div class="card-img">
               <img
-                src="https://m.media-amazon.com/images/I/71wzZxJ0dZL._AC_SX679_.jpg"
+                
                 class="img-fluid"
                 alt=""
               />
             </div>
             <div class="product-info">
-              <h4 class="product-name">Roomba i3</h4>
+              <h4 class="product-name">test</h4>
               <p class="price"><strike>$600.00</strike> <span>$469.00</span></p>
               <div class="rating">
                 <ul class="stars">
@@ -695,9 +672,35 @@
     </section>
   </template>
   
-  <script>
-  export default {};
-  </script>
+<script>
+import axios from 'axios';
+
+export default {
+  name: 'productsLine',
+
+  data() {
+    return {
+      products: {},
+    }
+  },
+  created() {
+     this.getProducts();
+   },
+   methods: {
+    async getProducts() {
+       axios
+         .get("https://fakestoreapi.com/products")
+         .then((res) => {
+            this.products = res.data;
+            console.log(this.products[13]);
+         })
+         .catch((error) => {
+           console.log(error);
+         });
+     },
+   },
+}
+</script>
   
   <style scoped>
   .product-line {
@@ -715,8 +718,6 @@
     background-color: var(--blue);
     color: white;
     text-align: center;
-    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-    animation: heartbeat 1.5s ease-in-out infinite both;
     border-radius: 2rem;
     box-shadow: 0 0 20px var(--blue);
   }
