@@ -23,7 +23,7 @@
           </div>
           <div class="product-info">
             <h4 class="product-name">{{product.name}}</h4>
-            <p class="price"><strike>R$1200</strike> <span>R${{product.price}}</span></p>
+            <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
             <a href="#" class="cart">Adicionar no Carrinho</a>
           </div>
       </div>
