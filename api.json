@@ -1,0 +1,88 @@
+{
+  "products": [
+      {
+          "id": 1,
+          "name": "iPhone 11",
+          "oldPrice": 999,
+          "price": 1200,
+          "image": "https://m.media-amazon.com/images/I/715HCLsOHbL._AC_SX679_.jpg"
+      },
+      {
+          "id": 2,
+          "name": "iPhone 14 Pro Max",
+          "oldPrice": 999,
+          "price": 1200,
+          "image": "https://m.media-amazon.com/images/I/51iJx7YWDOL._AC_SX679_.jpg"
+      },
+      {
+          "id": 3,
+          "name": "Echo Dot",
+          "oldPrice": 999,
+          "price": 1200,
+          "image": "https://m.media-amazon.com/images/I/41GZCWFJB1L._AC_.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Philips Smart TV",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/516a6nK-yNL._AC_SX522_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Fire TV Stick",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/51nwegA8VdL._AC_SX569_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Mousepad",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/71oCBfSwWwL._AC_SX679_.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Headset",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/41wTbMic2eL._AC_.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Dualshock 4",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/51Ieq0twp+L._AC_SX425_.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Mouse",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/51eXBGX+MYL._AC_SX679_.jpg"
+    },{
+        "id": 10,
+        "name": "Monitor",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/61IVFGkcREL._AC_SX425_.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Teclado",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.kabum.com.br/produtos/fotos/234051/teclado-mecanico-gamer-husky-gaming-hailstorm-preto-65-swtich-gateron-red-abnt2-hgmo006_1664369238_gg.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Console",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.kabum.com.br/produtos/fotos/128561/console-microsoft-xbox-series-s-500gb-branco-rrs-00006_1601067301_gg.jpg"
+    }
+
+  ]
+}
