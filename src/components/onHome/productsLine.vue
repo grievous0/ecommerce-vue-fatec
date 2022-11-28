@@ -212,6 +212,7 @@ name: 'productsLine',
     background-color: white;
     padding: 1rem;
     margin: 1rem 0;
+    border-radius: 1rem;
   }
   
   .picks .highlight {

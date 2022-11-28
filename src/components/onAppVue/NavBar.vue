@@ -1,8 +1,7 @@
 <template>
     <section class="userLinks">
-      <router-link class="link" to="">Help</router-link>|
-      <router-link class="link" to="/joinus">Join Us</router-link>|
-      <router-link class="link" to="/login">Sign In</router-link>
+      <router-link class="link" to="/joinus">Criar conta </router-link>
+      <router-link class="link" to="/login">Login</router-link>
     </section>
     <nav class="navbar">
       <div class="burger-menu">
@@ -63,7 +62,7 @@
       </div>
       <div class="brand">
         <router-link to="/">
-          <img class="logo" src="@/assets/logo.png" alt="" />
+          <img class="logo" src="@/assets/founditlogoteste.png" alt="" />
         </router-link>
       </div>
       <div class="tools">
@@ -89,7 +88,7 @@
   
               <div class="shopping-cart-total">
                 <h6 class="total">Total:</h6>
-                <h6 class="totalAmount">$2,229.97</h6>
+                <h6 class="totalAmount">R$2,229.97</h6>
               </div>
             </div>
             <hr />
@@ -105,7 +104,7 @@
                 <div class="productDesc">
                   <h5 class="productName">Airpods Pro</h5>
                   <div class="info">
-                    <h4 class="price">$169.00</h4>
+                    <h4 class="price">R$169.00</h4>
                     <h4 class="qty"><span>Quantity: </span> 3</h4>
                   </div>
                 </div>
@@ -121,7 +120,7 @@
                 <div class="productDesc">
                   <h5 class="productName">Macbook Air</h5>
                   <div class="info">
-                    <h4 class="price">$649.00</h4>
+                    <h4 class="price">R$649.00</h4>
                     <h4 class="qty"><span>Quantity: </span> 1</h4>
                   </div>
                 </div>
@@ -137,7 +136,7 @@
                 <div class="productDesc">
                   <h5 class="productName">Xbox S</h5>
                   <div class="info">
-                    <h4 class="price">$239.00</h4>
+                    <h4 class="price">R$239.00</h4>
                     <h4 class="qty"><span>Quantity: </span> 1</h4>
                   </div>
                 </div>
@@ -169,19 +168,19 @@
     flex-direction: row;
     align-items: center;
     justify-content: end;
-    background-color: var(--grey);
+    background-color: #262626;
     width: 100%;
     padding: 0.5rem 2rem;
     gap: 0.7rem;
     height: 2rem;
   }
   .userLinks .link {
-    color: var(--carbon);
+    color:  #FAB23D;
     text-decoration: none;
     transition: 0.2s;
   }
   .userLinks .link:hover {
-    color: var(--carbonLight);
+    color: white;
   }
   .navbar {
     padding: 0;
@@ -191,7 +190,7 @@
     padding: 0.8rem 1.5rem;
     top: 0;
     position: sticky;
-    background-color: white;
+    background-color: #000000;
     z-index: 2;
   }
   
@@ -204,7 +203,7 @@
   }
   .searchBox {
     display: flex;
-    border: solid var(--carbon) 1px;
+    border: solid #FAB23D 1px;
     border-radius: 2rem;
     padding: 0.2rem 0.7rem;
   }
@@ -255,13 +254,13 @@
   }
   
   .fa-solid {
-    color: var(--carbon);
+    color: white;
     font-size: 1.5rem;
     transition: 0.6s;
   }
   
   .fa-solid:hover {
-    color: grey;
+    color: #FAB23D;
     transition: 0.4s;
   }
   .dropdown {

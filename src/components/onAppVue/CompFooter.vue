@@ -1,41 +1,40 @@
 <template>
     <footer class="footer">
       <a href="#" class="go-top">
-        <h3>Go to top</h3>
+        <h3>Voltar ao topo</h3>
       </a>
       <div class="footer-top">
         <div class="sections">
           <div class="logo-section">
-            <img class="logo" src="@/assets/logo.png" alt="" />
-            <p class="description">The best place to buy tech items.</p>
+            <img class="logo" src="@/assets/founditlogoteste3.png" alt="" />
+            <p class="description">O melhor produto para " T.I "</p>
           </div>
           <div class="section">
             <h3 class="subtitle">Service</h3>
             <ul class="links">
               <li>
-                <router-link class="link" to="/about-us">About Us</router-link>
+                <router-link class="link" to="/about-us">Sobre</router-link>
               </li>
-              <li><router-link class="link" to="">Contact Us</router-link></li>
-              <li><router-link class="link" to="">Features</router-link></li>
-              <li><router-link class="link" to="">Support</router-link></li>
+              <li><router-link class="link" to="">Fale conosco</router-link></li>
+              <li><router-link class="link" to="">Suporte</router-link></li>
             </ul>
           </div>
           <div class="section">
-            <h3 class="subtitle">Contact Us</h3>
+            <h3 class="subtitle">Fale conosco</h3>
             <div class="contactSection">
               <ul class="links">
                 <li class="contact">
                   <div class="contactItem">
                     <i class="fa-solid fa-house"></i>
-                    <p>New York</p>
+                    <p>Fatec Americana</p>
                   </div>
                   <div class="contactItem">
                     <i class="fa-solid fa-envelope"></i>
-                    <p>mail@mail.com</p>
+                    <p>foundit@mail.com</p>
                   </div>
                   <div class="contactItem">
                     <i class="fa-solid fa-phone"></i>
-                    <p>+ 01 234 567 88</p>
+                    <p>+ 12 345 678 910</p>
                   </div>
                 </li>
                 <li class="social">
@@ -60,10 +59,7 @@
       <hr class="divider" />
       <div class="footer-bottom">
         <p class="credits">
-          © 2022 GeekCave - All rights reserved. | Made by
-          <a target="blank" href="https://github.com/alfclark/ecommerce-site"
-            >AlfClark</a
-          >
+          © 2022 FoundIt - All rights reserved - feito por - Fabricio José dos Santos Junior, João Vitor de Oliveira pereira, Rafael Nunes, Raul de Oliveira Araujo
         </p>
       </div>
     </footer>
@@ -96,7 +92,7 @@
   }
   
   .go-top:hover {
-    background-color: grey;
+    background-color: #FAB23D;
   }
   
   .go-top > h3 {
@@ -126,7 +122,7 @@
   
   .logo {
     width: 70px;
-    background-color: white;
+    background-color: transparent;
     margin-bottom: 0.3rem;
     padding: 0.4rem;
   }
@@ -195,6 +191,7 @@
   
   .divider {
     width: 90vw;
+    color: #FAB23D;
   }
   .credits {
     font-size: 0.7rem;
@@ -235,5 +232,32 @@
       justify-content: center;
     }
   }
+  
+  .subtitle{
+    color: #FAB23D;
+  }
+  .fa-house{
+    color: #FAB23D;
+  }
+
+  .fa-envelope{
+    color: #FAB23D;
+  }
+  .fa-phone{
+    color: #FAB23D;
+  }
+  .fa-instagram{
+    color: #FAB23D;
+  }
+  .fa-twitter{
+    color: #FAB23D;
+  }
+  .fa-linkedin-in{
+    color: #FAB23D;
+  }
+  .fa-facebook-f{
+    color: #FAB23D;
+  }
+  
   </style>
   
