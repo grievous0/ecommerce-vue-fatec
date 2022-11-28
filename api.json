@@ -1,0 +1,88 @@
+{
+  "products": [
+      {
+          "id": 1,
+          "name": "iPhone 11",
+          "oldPrice": 999,
+          "price": 1200,
+          "image": "https://m.media-amazon.com/images/I/715HCLsOHbL._AC_SX679_.jpg"
+      },
+      {
+          "id": 2,
+          "name": "iPhone 14 Pro Max",
+          "oldPrice": 999,
+          "price": 1200,
+          "image": "https://m.media-amazon.com/images/I/51iJx7YWDOL._AC_SX679_.jpg"
+      },
+      {
+          "id": 3,
+          "name": "Echo Dot",
+          "oldPrice": 999,
+          "price": 200,
+          "image": "https://m.media-amazon.com/images/I/41GZCWFJB1L._AC_.jpg"
+      },
+      {
+        "id": 4,
+        "name": "PHILIPS Smart TV",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/516a6nK-yNL._AC_SX522_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Fire TV Stick",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://m.media-amazon.com/images/I/51nwegA8VdL._AC_SX569_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Teclado",
+        "oldPrice": 999,
+        "price": 200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },
+    {
+        "id": 7,
+        "name": "Iphone 9",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },
+    {
+        "id": 8,
+        "name": "Nootebook",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },
+    {
+        "id": 9,
+        "name": "Teclado",
+        "oldPrice": 999,
+        "price": 200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },{
+        "id": 10,
+        "name": "Iphone 9",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },
+    {
+        "id": 12,
+        "name": "Nootebook",
+        "oldPrice": 999,
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    },
+    {
+        "id": 13,
+        "name": "Teclado",
+        "oldPrice": 999,
+        "price": 200,
+        "image": "https://images.unsplash.com/photo-1596558450268-9c27524ba856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+    }
+
+  ]
+}
