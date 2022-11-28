@@ -17,7 +17,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownProduct">
             <form class="searchBox">
-              <input class="productSearch" type="text" placeholder="Search" />
+              <input class="productSearch" type="text" placeholder="Pesquisar produtos" />
               <button type="submit" class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
@@ -26,34 +26,25 @@
             <div class="productCategories">
               <ul class="categories">
                 <li class="category">
-                  <a href="" class="categoryLink">TV & Home Theater</a>
+                  <a href="" class="categoryLink">TV e Som</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Computers & Tablets</a>
+                  <a href="" class="categoryLink">Computadores e Tablets</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Cameras & Video</a>
+                  <a href="" class="categoryLink">Camêra e Vídeo</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Phones</a>
+                  <a href="" class="categoryLink">Smartphones</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Audio</a>
+                  <a href="" class="categoryLink">Áudio</a>
                 </li>
                 <li class="category">
                   <a href="" class="categoryLink">Videogames</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Smart Home</a>
-                </li>
-                <li class="category">
-                  <a href="" class="categoryLink">Movies & Music</a>
-                </li>
-                <li class="category">
-                  <a href="" class="categoryLink">Security & Internet</a>
-                </li>
-                <li class="category">
-                  <a href="" class="categoryLink">Other</a>
+                  <a href="" class="categoryLink">Outros</a>
                 </li>
               </ul>
             </div>
@@ -67,6 +58,16 @@
       </div>
       <div class="tools">
         <div class="dropdown">
+          <router-link to="/publish">
+            <button
+              class="btn publish"
+              type="button"
+              id="dropdownPublish"
+            >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </router-link>
+
           <button
             class="btn dropdown-toggle cart"
             type="button"
@@ -83,72 +84,39 @@
             <div class="cartHeader">
               <div class="cartQuantity">
                 <i class="fa fa-shopping-cart cart-icon"></i
-                ><span class="badge">3</span>
+                ><span class="badge"></span>
               </div>
   
               <div class="shopping-cart-total">
                 <h6 class="total">Total:</h6>
-                <h6 class="totalAmount">R$2,229.97</h6>
+                <h6 class="totalAmount">R${{this.totalPrice}}</h6>
               </div>
             </div>
             <hr />
             <div class="products">
-              <div class="product">
+              <div class="product"
+                v-for="(product, index) in cart"
+                :key="index">
                 <div class="productImage">
                   <img
                     class="image"
-                    src="https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL.__AC_SY445_SX342_QL70_FMwebp_.jpg"
+                    :src="product.image"
                     alt=""
                   />
                 </div>
                 <div class="productDesc">
-                  <h5 class="productName">Airpods Pro</h5>
+                  <h5 class="productName">{{product.name}}</h5>
                   <div class="info">
-                    <h4 class="price">R$169.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 3</h4>
+                    <h4 class="price">R${{product.price}}</h4>
+                    <i class="fa fa-trash-o delete-icon" @click="deleteFromCart(product.id)"></i>
                   </div>
                 </div>
-              </div>
-              <div class="product">
-                <div class="productImage">
-                  <img
-                    class="image"
-                    src="https://m.media-amazon.com/images/I/51dafnlz6wL._AC_SL1024_.jpg"
-                    alt=""
-                  />
-                </div>
-                <div class="productDesc">
-                  <h5 class="productName">Macbook Air</h5>
-                  <div class="info">
-                    <h4 class="price">R$649.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 1</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="product">
-                <div class="productImage">
-                  <img
-                    class="image"
-                    src="https://m.media-amazon.com/images/I/71NBQ2a52CL._SX522_.jpg"
-                    alt=""
-                  />
-                </div>
-                <div class="productDesc">
-                  <h5 class="productName">Xbox S</h5>
-                  <div class="info">
-                    <h4 class="price">R$239.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 1</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="go-to-cart">
-                <router-link class="see" to="/checkout">See all ></router-link>
               </div>
             </div>
             <hr />
             <div class="checkoutSection">
               <router-link class="checkout" to="/checkout"
-                >Continue to Checkout
+                >Fechar Compra
               </router-link>
             </div>
           </div>
@@ -158,7 +126,52 @@
   </template>
   
   <script>
-  export default {};
+    import axios from 'axios';
+
+    export default {
+
+      name: "NavBar",
+      data() {
+        return {
+          cart: '',
+          totalPrice: 0,
+        }
+      },
+      mounted() {
+        this.fetchCart();
+        this.countTotalPrice();
+      },
+      methods: {
+        fetchCart(){
+        axios.get('http://localhost:3000/cart/')
+          .then(response => {
+            this.cart = response.data;
+          })
+          .catch(error => {
+            console.log(error);
+          })
+        },
+        countTotalPrice(){
+          axios.get('http://localhost:3000/cart/')
+          .then(response => {
+            response.data.forEach(product => {
+              this.totalPrice += product.price;
+            });
+          })
+
+        },
+        deleteFromCart(index){
+          axios.delete(`http://localhost:3000/cart/${index}`)
+          .then(response => {
+            console.log(response);
+            this.fetchCart();
+          })
+          .catch(error => {
+            console.log(error);
+          })
+        }
+      }
+    }
   </script>
   
   <style scoped>
@@ -239,7 +252,9 @@
   
   .logo {
     width: 80px;
-    margin: 0;
+    margin-left: 50%;
+    margin-right: 50%;
+    padding: 2px;
     transition: 1s;
   }
   
@@ -282,6 +297,13 @@
     font-size: 1.2rem;
     margin-right: 7px;
   }
+  .delete-icon {
+    font-size: 1rem;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    color: red;
+    cursor: pointer;
+  }
   .badge {
     background-color: var(--blue);
     border-radius: 10px;
@@ -302,7 +324,7 @@
     font-size: 0.8rem;
   }
   .totalAmount {
-    margin: 0 3px 0 0;
+    margin: 0 3px 0 5px;
     color: var(--blue);
   }
   .products {

@@ -1,35 +1,83 @@
 <template>
-    <section class="product-line">
-      <div class="messages">
-        <h3 class="message">
-        </h3>
-      </div>
+  <section class="product-line">
+    <div class="messages">
+      <h3 class="message"></h3>
+    </div>
       
-        <h2 class="title">
-          <span class="highlight">Produtos em destaque</span>
-        </h2>
+    <h2 class="title">
+      <span class="highlight">Produtos em destaque</span>
+    </h2>
         
-      <div class="product-cards">
-        <div class="card" 
-          v-for="(product, index) in products" 
-          :key="index"
-        >
-          <div class="card-img">
-            <img
-              :src="product.image"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-          <div class="product-info">
+    <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in featuredProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
             <h4 class="product-name">{{product.name}}</h4>
             <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
-            <a href="#" class="cart">Adicionar no Carrinho</a>
-          </div>
+            <a @click="addToCart(product)" class="cart">Adicionar no Carrinho</a>
+        </div>
       </div>
-    </div>
-    </section>
-  </template>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Produtos com desconto</span>
+  </h2>
+  
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in discountedProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
+            <a class="cart" @click="addToCart(product)">Adicionar no Carrinho</a>
+        </div>
+      </div>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Seus produtos</span>
+  </h2>
+  
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in products" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><span>R${{product.price}}</span></p>
+            <a class="delete" @click="deleteProduct(index)">Deletar</a>
+        </div>
+      </div>
+  </div>
+      
+  </section>
+</template>
   
 <script>
 import axios from 'axios';
@@ -39,14 +87,76 @@ name: 'productsLine',
 
   data(){
       return {
-        products: ''
+        products: '',
+        featuredProducts: '',
+        discountedProducts: '',
+        cart: '',
       }
     },
   mounted(){
-    axios.get('http://localhost:3000/products/').then(response => {
-      this.products = response.data
-      console.log(this.products)
-    })
+    this.fetchFeaturedProducts();
+    this.fetchDiscountedProducts();
+    this.fetchProducts();
+  },
+  methods: {
+    fetchFeaturedProducts(){
+      axios.get('http://localhost:3000/featuredProducts/')
+      .then(response => {
+        this.featuredProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchDiscountedProducts(){
+      axios.get('http://localhost:3000/discountedProducts/')
+      .then(response => {
+        this.discountedProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchProducts(){
+      axios.get('http://localhost:3000/products/')
+      .then(response => {
+        this.products = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    deleteProduct(index){
+      axios.delete(`http://localhost:3000/products/${index + 1}`)
+      .then(response => {
+        this.fetchProducts();
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    addToCart(product){
+      axios.post('http://localhost:3000/cart/', product)
+      .then(response => {
+        this.fetchCart()
+        console.log(response);
+      })
+    },
+
+    fetchCart(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        this.cart = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
   }
 }
 </script>
@@ -296,6 +406,19 @@ name: 'productsLine',
     text-decoration: none;
     color: var(--blue);
   }
+
+  .cart:hover {
+    color: rgb(156, 0, 0);
+  }
+  .delete {
+    text-decoration: none;
+    color: #bb8630;
+  }
+
+  .delete:hover {
+    color: rgb(156, 0, 0);
+  }
+
   .refurbished .highlight {
     color: var(--yellow);
   }

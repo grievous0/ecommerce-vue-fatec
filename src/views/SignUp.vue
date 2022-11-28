@@ -2,7 +2,7 @@
     <section class="signUpSection">
       <div class="msg">
         <h4 class="welcome">Criar Conta!</h4>
-        <h6 class="instructions">Insira suas inforção</h6>
+        <h6 class="instructions">Insira suas informações</h6>
       </div>
       <div class="loginCard">
         <div class="loginForm">
@@ -12,9 +12,9 @@
               class="name"
               type="text"
               name="name"
-              placeholder="insira seu nome name"
+              placeholder="Insira seu nome"
             />
-            <label class="inputLabel" for="email">Email</label>
+            <label class="inputLabel" for="email">E-mail</label>
             <input
               class="user"
               type="text"
@@ -26,7 +26,7 @@
               class="password"
               type="password"
               name="password"
-              placeholder="insira uma senha"
+              placeholder="Insira uma senha"
             />
             <label class="inputLabel" for="password">Confirmar senha</label>
             <input
@@ -38,7 +38,7 @@
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
               <p class="message">
-               Eu concordo com<a href="">Termos</a> e <a href="">Privacidade</a>
+               Eu concordo com os <a href="">Termos</a> e <a href="">Privacidade</a>
               </p>
             </div>
             <button class="loginBtn" type="">Criar conta</button>

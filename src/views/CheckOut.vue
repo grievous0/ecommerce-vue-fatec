@@ -194,7 +194,7 @@ input {
   margin: 0.8rem 0;
   font-size: 1.2rem;
   outline: none;
-  font-size: Roboto;
+  font-size: Poppins;
   font-weight: 400;
   padding: 0 5px;
 }

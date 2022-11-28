@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @keyframes heartbeat {
   from {
     transform: scale(1);
@@ -60,7 +60,7 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
