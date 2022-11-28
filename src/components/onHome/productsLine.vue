@@ -2,8 +2,7 @@
     <section class="product-line">
       <div class="messages">
         <h3 class="message">
-          <span class="underline">Frete grátis</span> em
-          <span class="underline">toda loja.</span>
+          <span class="underline">Frete grátis</span> em toda loja
         </h3>
       </div>
       <div class="discounted">
@@ -46,14 +45,12 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img
-                              :src = "this.products[13].image"
-                            />
+                           
                           </div>
                           <div class="thumb-content">
-                            <h4>{{ this.products[13].title }}</h4>
+                          
                             <p class="item-price">
-                              <strike>R$1200</strike> <span>R${{ this.products[13].price }}</span>
+                              <strike>RR$1200</strike> 
                             </p>
                             <a href="#" class="btn btn-primary"
                               ><i class="fa-solid fa-cart-plus"></i
@@ -71,7 +68,7 @@
                           <div class="thumb-content">
                             <h4>Sony WHCH710N</h4>
                             <p class="item-price">
-                              <strike>$195.00</strike> <span>$143.99</span>
+                              <strike>R$195.00</strike> <span>R$143.99</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -110,7 +107,7 @@
                           <div class="thumb-content">
                             <h4>Macbook Air</h4>
                             <p class="item-price">
-                              <strike>$899.00</strike> <span>$649.00</span>
+                              <strike>R$899.00</strike> <span>R$649.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -149,7 +146,7 @@
                           <div class="thumb-content">
                             <h4>Nikon DSLR</h4>
                             <p class="item-price">
-                              <strike>$315.00</strike> <span>$250.00</span>
+                              <strike>R$315.00</strike> <span>R$250.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -192,7 +189,7 @@
                           <div class="thumb-content">
                             <h4>Ring Cam</h4>
                             <p class="item-price">
-                              <strike>$199.00</strike> <span>$169.00</span>
+                              <strike>R$199.00</strike> <span>R$169.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -231,7 +228,7 @@
                           <div class="thumb-content">
                             <h4>Echo Dot</h4>
                             <p class="item-price">
-                              <strike>$99.00</strike> <span>$39.00</span>
+                              <strike>R$99.00</strike> <span>R$39.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -270,7 +267,7 @@
                           <div class="thumb-content">
                             <h4>Bose Speaker</h4>
                             <p class="item-price">
-                              <strike>$109.00</strike> <span>$99.00</span>
+                              <strike>R$109.00</strike> <span>R$99.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -309,7 +306,7 @@
                           <div class="thumb-content">
                             <h4>Galaxy S8</h4>
                             <p class="item-price">
-                              <strike>$599.00</strike> <span>$569.00</span>
+                              <strike>R$599.00</strike> <span>R$569.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -352,7 +349,7 @@
                           <div class="thumb-content">
                             <h4>iPhone 12</h4>
                             <p class="item-price">
-                              <strike>$769.00</strike> <span>$749.00</span>
+                              <strike>R$769.00</strike> <span>R$749.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -391,7 +388,7 @@
                           <div class="thumb-content">
                             <h4>Canon DSLR</h4>
                             <p class="item-price">
-                              <strike>$315.00</strike> <span>$250.00</span>
+                              <strike>R$315.00</strike> <span>R$250.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -430,7 +427,7 @@
                           <div class="thumb-content">
                             <h4>Logitech G305</h4>
                             <p class="item-price">
-                              <strike>$150.00</strike> <span>$118.00</span>
+                              <strike>R$150.00</strike> <span>R$118.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -469,7 +466,7 @@
                           <div class="thumb-content">
                             <h4>Apple Watch</h4>
                             <p class="item-price">
-                              <strike>$350.00</strike> <span>$330.00</span>
+                              <strike>R$350.00</strike> <span>R$330.00</span>
                             </p>
                             <div class="star-rating">
                               <ul class="list-inline">
@@ -523,7 +520,7 @@
       </div>
       <div class="picks">
         <h2 class="title">
-          <span class="highlight"><b>Picks</b> </span> of the day
+          <span class="highlight"><b>Melhores</b> </span> Avaliações
         </h2>
         <div class="product-cards">
           <div class="card">
@@ -536,7 +533,7 @@
             </div>
             <div class="product-info">
               <h4 class="product-name">test</h4>
-              <p class="price"><strike>$600.00</strike> <span>$469.00</span></p>
+              <p class="price"><strike>R$600.00</strike> <span>R$469.00</span></p>
               <div class="rating">
                 <ul class="stars">
                   <li class="star">
@@ -557,7 +554,7 @@
                   <li class="count">4,326</li>
                 </ul>
               </div>
-              <a href="#" class="cart">Add to Cart</a>
+              <a href="#" class="cart">Adicionar ao carrinho</a>
             </div>
           </div>
           <div class="card">
@@ -570,7 +567,7 @@
             </div>
             <div class="product-info">
               <h4 class="product-name">Airpods Pro</h4>
-              <p class="price"><strike>$199.00</strike> <span>$169.00</span></p>
+              <p class="price"><strike>R$199.00</strike> <span>R$169.00</span></p>
               <div class="rating">
                 <ul class="stars">
                   <li class="star">
@@ -591,7 +588,7 @@
                   <li class="count">4,326</li>
                 </ul>
               </div>
-              <a href="#" class="cart">Add to Cart</a>
+              <a href="#" class="cart">Adicionar ao carrinho</a>
             </div>
           </div>
           <div class="card">
@@ -604,7 +601,7 @@
             </div>
             <div class="product-info">
               <h4 class="product-name">Xbox S</h4>
-              <p class="price"><strike>$299.00</strike> <span>$239.00</span></p>
+              <p class="price"><strike>R$299.00</strike> <span>R$239.00</span></p>
               <div class="rating">
                 <ul class="stars">
                   <li class="star">
@@ -625,7 +622,7 @@
                   <li class="count">4,326</li>
                 </ul>
               </div>
-              <a href="#" class="cart">Add to Cart</a>
+              <a href="#" class="cart">Adicionar ao carrinho</a>
             </div>
           </div>
           <div class="card">
@@ -638,7 +635,7 @@
             </div>
             <div class="product-info">
               <h4 class="product-name">MSI Stealth 15M</h4>
-              <p class="price"><strike>$1400.00</strike> <span>$1269.00</span></p>
+              <p class="price"><strike>R$1400.00</strike> <span>R$1269.00</span></p>
               <div class="rating">
                 <ul class="stars">
                   <li class="star">
@@ -659,15 +656,10 @@
                   <li class="count">4,326</li>
                 </ul>
               </div>
-              <a href="#" class="cart">Add to Cart</a>
+              <a href="#" class="cart">Adicionar ao carrinho</a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="refurbished">
-        <h2 class="title">
-          <span class="highlight"><b>Refurbished</b> </span> deals
-        </h2>
       </div>
     </section>
   </template>
@@ -863,6 +855,7 @@ export default {
     background-color: white;
     padding: 1rem;
     margin: 1rem 0;
+    border-radius: 1rem;
   }
   
   .picks .highlight {

@@ -44,7 +44,7 @@
                     <input type="radio" name="gender" value="male" />
                     <h6>Express</h6>
                     <h6>1-3 days</h6>
-                    <h6>$5.99</h6>
+                    <h6>R$5.99</h6>
                   </div>
                 </form>
               </div>

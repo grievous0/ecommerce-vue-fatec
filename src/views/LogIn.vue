@@ -1,8 +1,8 @@
 <template>
     <section class="loginSection">
       <div class="msg">
-        <h4 class="welcome">Welcome back!</h4>
-        <h6 class="instructions">Enter your login information</h6>
+        <h4 class="welcome">Bem Vindo!</h4>
+        <h6 class="instructions">Entre com suas informações de login</h6>
       </div>
       <div class="loginCard">
         <div class="loginForm">
@@ -11,43 +11,29 @@
               class="user"
               type="text"
               name=""
-              placeholder="Enter your username or email"
+              placeholder="Email"
             />
             <input
               class="password"
               type="password"
               name=""
-              placeholder="Enter your password"
+              placeholder="Senha"
             />
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
-              <p class="message">Remember me</p>
+              <p class="message">Lembrar-se de mim</p>
             </div>
             <button class="loginBtn" type="">Login</button>
           </form>
           <div class="noPassword">
             <router-link class="forgotPassword" to=""
-              >Forgot Password?</router-link
+              >Esqueceu a senhas?</router-link
             >
           </div>
           <p class="join">
-            Not a member?
-            <router-link class="toJoin" to="/joinus">Join</router-link>
+            Não tem uma conta?
+            <router-link class="toJoin" to="/joinus">Criar conta</router-link>
           </p>
-        </div>
-        <div class="or">
-          <span class="divider"> Or </span>
-        </div>
-        <div class="socialLogin">
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-google"></i>Continue with Google
-          </button>
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-apple"></i>Continue with Apple
-          </button>
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-facebook-f"></i>Continue with Facebook
-          </button>
         </div>
       </div>
     </section>

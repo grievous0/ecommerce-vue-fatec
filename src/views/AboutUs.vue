@@ -13,7 +13,6 @@ export default {
   data() {
     return {
       products: {},
-      posts
     }
   },
   created() {
@@ -34,7 +33,7 @@ export default {
    },
    async getProducts() {
       try {
-        const response = await this.$http.get(
+        const response = await this.R$http.get(
           "https://fakestoreapi.com/products"
         );
         this.posts = response.data;

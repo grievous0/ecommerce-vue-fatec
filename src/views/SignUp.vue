@@ -1,59 +1,52 @@
 <template>
     <section class="signUpSection">
       <div class="msg">
-        <h4 class="welcome">Join us!</h4>
-        <h6 class="instructions">Enter your sign up information</h6>
+        <h4 class="welcome">Criar Conta!</h4>
+        <h6 class="instructions">Insira suas inforção</h6>
       </div>
       <div class="loginCard">
         <div class="loginForm">
           <form action="" class="login">
-            <label class="inputLabel" for="name">Name</label>
+            <label class="inputLabel" for="name">Nome</label>
             <input
               class="name"
               type="text"
               name="name"
-              placeholder="Enter your name"
+              placeholder="insira seu nome name"
             />
             <label class="inputLabel" for="email">Email</label>
             <input
               class="user"
               type="text"
               name="email"
-              placeholder="Enter your email"
+              placeholder="Insira seu email"
             />
-            <label class="inputLabel" for="password">Password</label>
+            <label class="inputLabel" for="password">Senha</label>
             <input
               class="password"
               type="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="insira uma senha"
+            />
+            <label class="inputLabel" for="password">Confirmar senha</label>
+            <input
+              class="password"
+              type="password"
+              name="password"
+              placeholder="Confirme sua senha"
             />
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
               <p class="message">
-                I agree with <a href="">Terms</a> and <a href="">Privacy</a>
+               Eu concordo com<a href="">Termos</a> e <a href="">Privacidade</a>
               </p>
             </div>
-            <button class="loginBtn" type="">Signup</button>
+            <button class="loginBtn" type="">Criar conta</button>
           </form>
           <p class="join">
-            Already a member?
+            Já tem uma conta?
             <router-link class="toJoin" to="/login">Login</router-link>
           </p>
-        </div>
-        <div class="or">
-          <span class="divider"> Or </span>
-        </div>
-        <div class="socialLogin">
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-google"></i>Continue with Google
-          </button>
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-apple"></i>Continue with Apple
-          </button>
-          <button class="socialLoginBtn" type="">
-            <i class="fa-brands fa-facebook-f"></i>Continue with Facebook
-          </button>
         </div>
       </div>
     </section>

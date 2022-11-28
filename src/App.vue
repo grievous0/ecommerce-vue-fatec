@@ -44,14 +44,14 @@ export default {
   }
 }
 :root {
-  --carbon: #414042;
-  --carbonLight: #8e8e8e;
-  --grey: #eaeded87;
-  --black: #010101;
-  --blue: #2997ff;
+  --carbon: #262626;
+  --carbonLight: #383838;
+  --grey: #383838;
+  --black: #000000;
+  --blue: #FAB23D;
   --blueLight: #e8f0fe;
   --pink: #ca2166;
-  --green: green;
+  --green: #FFC812;
   --yellow: #fed761;
 }
 * {
