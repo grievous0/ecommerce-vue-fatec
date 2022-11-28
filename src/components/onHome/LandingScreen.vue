@@ -65,7 +65,7 @@
                 <h3>
                   Get <span class="supercharged">supercharged</span> for college.
                 </h3>
-                <h5>Save on Mac or iPad. Get in instant gift card up to $150.</h5>
+                <h5>Save on Mac or iPad. Get in instant gift card up to R$150.</h5>
                 <div class="buy-options">
                   <div class="mac">
                     <h6>Buy Mac.</h6>
