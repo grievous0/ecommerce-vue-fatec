@@ -21,13 +21,13 @@
             />
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
-              <p class="message">Lembrar-se de mim</p>
+              <p class="message">Lembrar de mim</p>
             </div>
             <button class="loginBtn" type="">Login</button>
           </form>
           <div class="noPassword">
             <router-link class="forgotPassword" to=""
-              >Esqueceu a senhas?</router-link
+              >Esqueceu a senha?</router-link
             >
           </div>
           <p class="join">

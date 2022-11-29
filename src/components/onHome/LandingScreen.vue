@@ -38,20 +38,13 @@
             </div>
             <div class="land-msg">
               <div class="upper-msg">
-                <img src="@/assets/img/brands/apple.svg" alt="" class="logo" />
+                <img src="@/assets/founditlogoteste.png" alt="" class="logo" />
                 <div class="msg">
-                  <h2>The Apple week is here!</h2>
-                  <h4>Save up to a 40% on MacBook Series this week.</h4>
-                </div>
-                <div class="features">
-                  <p>Supercharged by</p>
-                  <img class="M1" src="@/assets/img/extras/M1Pro.png" alt="" />
-                  <p>and</p>
-                  <img class="M1" src="@/assets/img/extras/M1ProMax.png" alt="" />
+                  <h2>Até 30% off em Elêtronicos</h2>
+                  <h4 class="semanabf">Semana Black Friday</h4>
                 </div>
                 <div class="links">
-                  <a href="" class="link">Learn more ></a>
-                  <a href="" class="link">Buy ></a>
+                  <a href="" class="link">Ver Ofertas</a>
                 </div>
               </div>
             </div>
@@ -60,24 +53,23 @@
         <div class="carousel-item">
           <div class="landing">
             <div class="land-msg">
-              <img src="@/assets/img/brands/apple.svg" alt="" class="logo" />
               <div class="upper-msg">
                 <h3>
-                  Get <span class="supercharged">supercharged</span> for college.
+                  Que tal um <span class="supercharged">SUPER DESCONTO?</span>
                 </h3>
-                <h5>Save on Mac or iPad. Get in instant gift card up to R$150.</h5>
+                <h5>Coloque um MAC ou um IPAD no seu carrinho ganhe R$500 de desconto.</h5>
                 <div class="buy-options">
                   <div class="mac">
-                    <h6>Buy Mac.</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Mac</h6>
+                    <a href="">Ver Modelos</a>
                   </div>
                   <div class="ipad">
-                    <h6>Buy iPad.</h6>
-                    <a href="">Compare models.</a>
+                    <h6>iPad</h6>
+                    <a href="">Ver Modelos</a>
                   </div>
                 </div>
-                <p>Or</p>
-                <a href="">Explore Apple college accesories</a>
+                <p>Ou</p>
+                <a href="">Ver acessorios da linha Apple</a>
               </div>
             </div>
             <div class="land-img">
@@ -107,22 +99,21 @@
   
               <div class="upper-msg">
                 <h3>
-                  The war of the <span class="assistants">assistants</span> is
-                  here.
+                 Escolha seu lado na guerra de<span class="assistants"> assistentes</span>
                 </h3>
-                <h5>Buy one and get the other for half the price.</h5>
+                <h5>Compre um e ganhe 50% de desconto no outro</h5>
                 <div class="buy-options">
                   <div class="mac">
-                    <h6>Buy Google Devices</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Google Home</h6>
+                    <a href="">Ver modelos</a>
                   </div>
                   <div class="ipad">
-                    <h6>Buy Alexa Devices</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Alexa Echo Dot</h6>
+                    <a href="">Ver modelos</a>
                   </div>
                 </div>
-                <p>Or</p>
-                <a href="">Explore smart accesories.</a>
+                <p>ou</p>
+                <a href="">Explorar outros produtos smart.</a>
               </div>
             </div>
           </div>
@@ -150,8 +141,6 @@
   </template>
   
   <script>
-  // @ is an alias to /src
-  
   export default {};
   </script>
   
@@ -205,12 +194,16 @@
   }
   
   a {
-    color: var(--blue);
+    color: var(--yellow);
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
+  }
+
+  .semanabf{
+   color: var(--blue);
   }
   
   .upper-msg > h3 {
@@ -235,7 +228,7 @@
     justify-content: center;
   }
   .logo {
-    width: 50px;
+    width: 120px;
     margin: 1rem;
   }
   .land-img {

@@ -1,696 +1,202 @@
 <template>
-    <section class="product-line">
-      <div class="messages">
-        <h3 class="message">
-          <span class="underline">Frete grátis</span> em toda loja
-        </h3>
+  <section class="product-line">
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
+      
+    <h2>
+      <span class="highlight">Produtos em destaque</span>
+    </h2>
+
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
+        
+    <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in featuredProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
+            <a @click="addToCart(product)" class="cart">Adicionar no Carrinho</a>
+        </div>
       </div>
-      <div class="discounted">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="title">
-                Produtos com<span class="highlight"><b> Desconto</b></span> 
-              </h2>
-              <div
-                id="trendingCarousel"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-                data-interval="0"
-              >
-                <!-- Carousel indicators -->
-                <div class="carousel-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#trendingCarousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#trendingCarousel"
-                    data-bs-slide-to="1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#trendingCarousel"
-                    data-bs-slide-to="2"
-                  ></button>
-                </div>
+  </div>
+
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Produtos com desconto</span>
+  </h2>
   
-                <!-- Wrapper for carousel items -->
-                <div class="carousel-inner">
-                  <div class="carousel-item">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                           
-                          </div>
-                          <div class="thumb-content">
-                          
-                            <p class="item-price">
-                              <strike>RR$1200</strike> 
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/81MB7dHmPVL._AC_SL1500_.jpg"
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Sony WHCH710N</h4>
-                            <p class="item-price">
-                              <strike>R$195.00</strike> <span>R$143.99</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/51dafnlz6wL._AC_SL1024_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Macbook Air</h4>
-                            <p class="item-price">
-                              <strike>R$899.00</strike> <span>R$649.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-half-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://www.tutorialrepublic.com/examples/images/products/nikon.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Nikon DSLR</h4>
-                            <p class="item-price">
-                              <strike>R$315.00</strike> <span>R$250.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/71A38wgDhmL._SX522_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Ring Cam</h4>
-                            <p class="item-price">
-                              <strike>R$199.00</strike> <span>R$169.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/51F+N9Z3h0L._AC_SX679_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Echo Dot</h4>
-                            <p class="item-price">
-                              <strike>R$99.00</strike> <span>R$39.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-half-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://www.tutorialrepublic.com/examples/images/products/speaker.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Bose Speaker</h4>
-                            <p class="item-price">
-                              <strike>R$109.00</strike> <span>R$99.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://www.tutorialrepublic.com/examples/images/products/galaxy.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Galaxy S8</h4>
-                            <p class="item-price">
-                              <strike>R$599.00</strike> <span>R$569.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/61l3+VGfj2L._AC_SX522_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>iPhone 12</h4>
-                            <p class="item-price">
-                              <strike>R$769.00</strike> <span>R$749.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://www.tutorialrepublic.com/examples/images/products/canon.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Canon DSLR</h4>
-                            <p class="item-price">
-                              <strike>R$315.00</strike> <span>R$250.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://images-na.ssl-images-amazon.com/images/I/51DYDLykzoL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Logitech G305</h4>
-                            <p class="item-price">
-                              <strike>R$150.00</strike> <span>R$118.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-                          <div class="img-box">
-                            <img
-                              src="https://m.media-amazon.com/images/I/71Pln-8awPL._AC_SX679_.jpg"
-                              class="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div class="thumb-content">
-                            <h4>Apple Watch</h4>
-                            <p class="item-price">
-                              <strike>R$350.00</strike> <span>R$330.00</span>
-                            </p>
-                            <div class="star-rating">
-                              <ul class="list-inline">
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star"></i>
-                                </li>
-                                <li class="list-inline-item">
-                                  <i class="fa fa-star-o"></i>
-                                </li>
-                              </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary"
-                              ><i class="fa-solid fa-cart-plus"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Carousel controls -->
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#trendingCarousel"
-                  data-bs-slide="prev"
-                >
-                  <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#trendingCarousel"
-                  data-bs-slide="next"
-                >
-                  <span class="carousel-control-next-icon"></span>
-                </button>
-              </div>
-            </div>
-          </div>
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in discountedProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
+            <a class="cart" @click="addToCart(product)">Adicionar no Carrinho</a>
         </div>
       </div>
-      <div class="picks">
-        <h2 class="title">
-          <span class="highlight"><b>Melhores</b> </span> Avaliações
-        </h2>
-        <div class="product-cards">
-          <div class="card">
-            <div class="card-img">
-              <img
-                
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="product-info">
-              <h4 class="product-name">test</h4>
-              <p class="price"><strike>R$600.00</strike> <span>R$469.00</span></p>
-              <div class="rating">
-                <ul class="stars">
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="count">4,326</li>
-                </ul>
-              </div>
-              <a href="#" class="cart">Adicionar ao carrinho</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                src="https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL.__AC_SY445_SX342_QL70_FMwebp_.jpg"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="product-info">
-              <h4 class="product-name">Airpods Pro</h4>
-              <p class="price"><strike>R$199.00</strike> <span>R$169.00</span></p>
-              <div class="rating">
-                <ul class="stars">
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="count">4,326</li>
-                </ul>
-              </div>
-              <a href="#" class="cart">Adicionar ao carrinho</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                src="https://m.media-amazon.com/images/I/71NBQ2a52CL._SX522_.jpg"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="product-info">
-              <h4 class="product-name">Xbox S</h4>
-              <p class="price"><strike>R$299.00</strike> <span>R$239.00</span></p>
-              <div class="rating">
-                <ul class="stars">
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="count">4,326</li>
-                </ul>
-              </div>
-              <a href="#" class="cart">Adicionar ao carrinho</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                src="https://m.media-amazon.com/images/I/71p3Ygm14wL._AC_SX522_.jpg"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="product-info">
-              <h4 class="product-name">MSI Stealth 15M</h4>
-              <p class="price"><strike>R$1400.00</strike> <span>R$1269.00</span></p>
-              <div class="rating">
-                <ul class="stars">
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="star">
-                    <i class="fa fa-star"></i>
-                  </li>
-                  <li class="count">4,326</li>
-                </ul>
-              </div>
-              <a href="#" class="cart">Adicionar ao carrinho</a>
-            </div>
-          </div>
+  </div>
+  
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Seus produtos</span>
+  </h2>
+
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+  
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in products" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><span>R${{product.price}}</span></p>
+            <a class="delete" @click="deleteProduct(index)">Deletar</a>
         </div>
       </div>
-    </section>
-  </template>
+  </div>
+      
+  </section>
+</template>
   
 <script>
 import axios from 'axios';
 
 export default {
-  name: 'productsLine',
+name: 'productsLine',
 
-  data() {
-    return {
-      products: {},
-    }
+  data(){
+      return {
+        products: '',
+        featuredProducts: '',
+        discountedProducts: '',
+        cart: '',
+        totalPrice: 0,
+      }
+    },
+  mounted(){
+    this.fetchFeaturedProducts();
+    this.fetchDiscountedProducts();
+    this.fetchProducts();
   },
-  created() {
-     this.getProducts();
-   },
-   methods: {
-    async getProducts() {
-       axios
-         .get("https://fakestoreapi.com/products")
-         .then((res) => {
-            this.products = res.data;
-            console.log(this.products[13]);
-         })
-         .catch((error) => {
-           console.log(error);
-         });
-     },
-   },
+  methods: {
+    fetchFeaturedProducts(){
+      axios.get('http://localhost:3000/featuredProducts/')
+      .then(response => {
+        this.featuredProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchDiscountedProducts(){
+      axios.get('http://localhost:3000/discountedProducts/')
+      .then(response => {
+        this.discountedProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchProducts(){
+      axios.get('http://localhost:3000/products/')
+      .then(response => {
+        this.products = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    deleteProduct(index){
+      axios.delete(`http://localhost:3000/products/${index + 1}`)
+      .then(response => {
+        this.fetchProducts();
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    addToCart(product){
+      axios.post('http://localhost:3000/cart/', product)
+      .then(response => {
+        this.fetchCart()
+        console.log(response);
+      })
+    },
+
+    fetchCart(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        this.cart = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+    countTotalPrice(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        response.data.forEach(product => {
+          this.totalPrice += product.price;
+        });
+      })
+    },
+    deleteFromCart(index){
+      axios.delete(`http://localhost:3000/cart/${index}`)
+      .then(response => {
+        console.log(response);
+        this.fetchCart();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
+  }
 }
 </script>
   
@@ -726,20 +232,7 @@ export default {
     position: relative;
     margin: 1rem;
   }
-  .discounted .highlight {
-    color: var(--blue);
-  }
-  h2::after {
-    content: "";
-    width: 100px;
-    position: absolute;
-    margin: 0 auto;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.2);
-    left: 0;
-    right: 0;
-    bottom: -20px;
-  }
+
   .carousel {
     margin: 3rem auto;
     padding: 0 2rem;
@@ -813,15 +306,7 @@ export default {
     right: 0;
     color: rgba(0, 0, 0, 0.8);
   }
-  
-  .carousel .item-price {
-    font-size: 12px;
-    margin: 0;
-  }
-  .carousel .item-price span {
-    color: #86bd57;
-    font-size: 120%;
-  }
+ 
   .carousel-indicators {
     bottom: -40px;
   }
@@ -858,8 +343,10 @@ export default {
     border-radius: 1rem;
   }
   
-  .picks .highlight {
-    color: var(--green);
+  .highlight {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
   }
   .product-cards {
     display: flex;
@@ -878,6 +365,7 @@ export default {
     flex-direction: row;
     width: 20%;
     height: 360px;
+    background-color: rgb(255, 255, 255);
   }
   .card:hover {
     box-shadow: 0 0 10px #00000040;
@@ -885,7 +373,7 @@ export default {
   }
   
   .card-img {
-    width: 200px;
+    width: 100px;
     padding: 1.2rem;
     display: flex;
     justify-content: center;
@@ -894,7 +382,7 @@ export default {
     height: 60%;
   }
   .card-img img {
-    width: 70%;
+    width: 50%;
   }
   .product-info {
     display: flex;
@@ -907,15 +395,16 @@ export default {
   .product-name {
     padding: 0;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   .price {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .price span {
     font-size: 110%;
     color: var(--green);
+    font-weight: bold;
   }
   .stars {
     list-style: none;
@@ -938,9 +427,24 @@ export default {
   .cart {
     text-decoration: none;
     color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600
   }
+
+  .cart:hover {
+    color: black;
+  }
+  .delete {
+    text-decoration: none;
+    color: #bb8630;
+  }
+
+  .delete:hover {
+    color: rgb(156, 0, 0);
+  }
+
   .refurbished .highlight {
-    color: var(--yellow);
+    color: white
   }
   
   @media screen and (max-width: 1000px) {

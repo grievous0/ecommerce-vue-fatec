@@ -2,14 +2,15 @@
   "name": "marketplace",
   "version": "0.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "app": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "api": "json-server --watch api.json"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "core-js": "^3.26.1",
+    "node": "^19.1.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6"
   },
@@ -24,6 +25,7 @@
     "axios": "^1.2.0",
     "eslint": "^8.28.0",
     "eslint-plugin-vue": "^9.8.0",
+    "json-server": "^0.17.1",
     "vite": "^3.1.8"
   }
 }
