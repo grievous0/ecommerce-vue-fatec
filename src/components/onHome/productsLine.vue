@@ -1,12 +1,16 @@
 <template>
   <section class="product-line">
     <div class="messages">
-      <h3 class="message"></h3>
+      <h3 class="message highlight"></h3>
     </div>
       
-    <h2 class="title">
+    <h2>
       <span class="highlight">Produtos em destaque</span>
     </h2>
+
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
         
     <div class="product-cards">
       <div class="card" 
@@ -28,10 +32,18 @@
       </div>
   </div>
 
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
   <h2 class="title">
     <span class="highlight">Produtos com desconto</span>
   </h2>
   
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
   <div class="product-cards">
       <div class="card" 
         v-for="(product, index) in discountedProducts" 
@@ -51,10 +63,18 @@
         </div>
       </div>
   </div>
+  
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
 
   <h2 class="title">
     <span class="highlight">Seus produtos</span>
   </h2>
+
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
   
   <div class="product-cards">
       <div class="card" 
@@ -91,6 +111,7 @@ name: 'productsLine',
         featuredProducts: '',
         discountedProducts: '',
         cart: '',
+        totalPrice: 0,
       }
     },
   mounted(){
@@ -157,6 +178,24 @@ name: 'productsLine',
         console.log(error);
       })
     },
+    countTotalPrice(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        response.data.forEach(product => {
+          this.totalPrice += product.price;
+        });
+      })
+    },
+    deleteFromCart(index){
+      axios.delete(`http://localhost:3000/cart/${index}`)
+      .then(response => {
+        console.log(response);
+        this.fetchCart();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
   }
 }
 </script>
@@ -193,20 +232,7 @@ name: 'productsLine',
     position: relative;
     margin: 1rem;
   }
-  .discounted .highlight {
-    color: var(--blue);
-  }
-  h2::after {
-    content: "";
-    width: 100px;
-    position: absolute;
-    margin: 0 auto;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.2);
-    left: 0;
-    right: 0;
-    bottom: -20px;
-  }
+
   .carousel {
     margin: 3rem auto;
     padding: 0 2rem;
@@ -280,15 +306,7 @@ name: 'productsLine',
     right: 0;
     color: rgba(0, 0, 0, 0.8);
   }
-  
-  .carousel .item-price {
-    font-size: 12px;
-    margin: 0;
-  }
-  .carousel .item-price span {
-    color: #86bd57;
-    font-size: 120%;
-  }
+ 
   .carousel-indicators {
     bottom: -40px;
   }
@@ -325,8 +343,10 @@ name: 'productsLine',
     border-radius: 1rem;
   }
   
-  .picks .highlight {
-    color: var(--green);
+  .highlight {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
   }
   .product-cards {
     display: flex;
@@ -345,6 +365,7 @@ name: 'productsLine',
     flex-direction: row;
     width: 20%;
     height: 360px;
+    background-color: rgb(236, 236, 236);
   }
   .card:hover {
     box-shadow: 0 0 10px #00000040;
@@ -374,15 +395,16 @@ name: 'productsLine',
   .product-name {
     padding: 0;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   .price {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .price span {
     font-size: 110%;
     color: var(--green);
+    font-weight: bold;
   }
   .stars {
     list-style: none;
@@ -405,10 +427,12 @@ name: 'productsLine',
   .cart {
     text-decoration: none;
     color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600
   }
 
   .cart:hover {
-    color: rgb(156, 0, 0);
+    color: black;
   }
   .delete {
     text-decoration: none;
@@ -420,7 +444,7 @@ name: 'productsLine',
   }
 
   .refurbished .highlight {
-    color: var(--yellow);
+    color: white
   }
   
   @media screen and (max-width: 1000px) {

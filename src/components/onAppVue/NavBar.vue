@@ -84,7 +84,7 @@
             <div class="cartHeader">
               <div class="cartQuantity">
                 <i class="fa fa-shopping-cart cart-icon"></i
-                ><span class="badge"></span>
+                ><span class="badge">{{this.totalItems}}</span>
               </div>
   
               <div class="shopping-cart-total">
@@ -135,15 +135,23 @@
         return {
           cart: '',
           totalPrice: 0,
+          totalItems: 0,
         }
       },
       mounted() {
         this.fetchCart();
         this.countTotalPrice();
+        this.countCartItems()
       },
       methods: {
+        countCartItems(){
+          axios.get('http://localhost:3000/cart')
+          .then(response => {
+            this.totalItems = response.data.length;
+          })
+        },
         fetchCart(){
-        axios.get('http://localhost:3000/cart/')
+          axios.get('http://localhost:3000/cart/')
           .then(response => {
             this.cart = response.data;
           })
@@ -158,7 +166,6 @@
               this.totalPrice += product.price;
             });
           })
-
         },
         deleteFromCart(index){
           axios.delete(`http://localhost:3000/cart/${index}`)
@@ -312,7 +319,7 @@
     align-items: center;
     font-size: 12px;
     line-height: 1;
-    padding: 3px 7px;
+    padding-bottom: 4px;
   }
   .shopping-cart-total {
     display: flex;

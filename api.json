@@ -37,7 +37,7 @@
     },
     {
       "id": 6,
-      "name": "Mousepad Logitech Speed++",
+      "name": "Mousepad Logitech",
       "oldPrice": 250,
       "price": 99,
       "image": "https://m.media-amazon.com/images/I/71oCBfSwWwL._AC_SX679_.jpg"
@@ -59,42 +59,42 @@
   ],
   "discountedProducts": [
     {
-      "id": 1,
+      "id": 9,
       "name": "Processador Ryzen",
       "oldPrice": 1999,
       "price": 1200,
       "image": "https://img.terabyteshop.com.br/produto/g/processador-amd-ryzen-5-4600g-37ghz-42ghz-turbo-6-cores-12-threads-cooler-wraith-stealth-am4-100-100000147box_141665.jpg"
     },
     {
-      "id": 2,
+      "id": 10,
       "name": "Placa de Vídeo RTX 3080",
       "oldPrice": 6999,
       "price": 4599,
       "image": "https://images.kabum.com.br/produtos/fotos/397581/placa-de-video-rtx-4080-gaming-x-trio-msi-nvidia-geforce-16-gb-gddr6x-dlss-ray-tracing-geforce-rtx-4080-16gb-gaming-x-trio_1668088014_gg.jpg"
     },
     {
-      "id": 3,
+      "id": 11,
       "name": "Mouse Logitech G305",
       "oldPrice": 350,
       "price": 199,
       "image": "https://m.media-amazon.com/images/I/51eXBGX+MYL._AC_SX679_.jpg"
     },
     {
-      "id": 4,
+      "id": 12,
       "name": "Monitor AOC Hero",
       "oldPrice": 1599,
       "price": 1099,
       "image": "https://m.media-amazon.com/images/I/61IVFGkcREL._AC_SX425_.jpg"
     },
     {
-      "id": 5,
+      "id": 13,
       "name": "Teclado Husky Hailstorm",
       "oldPrice": 479,
       "price": 279,
       "image": "https://images.kabum.com.br/produtos/fotos/234051/teclado-mecanico-gamer-husky-gaming-hailstorm-preto-65-swtich-gateron-red-abnt2-hgmo006_1664369238_gg.jpg"
     },
     {
-      "id": 6,
+      "id": 14,
       "name": "Xbox Series S",
       "oldPrice": 2999,
       "price": 1399,
