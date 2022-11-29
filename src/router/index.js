@@ -5,6 +5,7 @@ import LogIn from '../views/LogIn.vue'
 import CheckOut from '../views/CheckOut.vue'
 import JoinUs from '../views/SignUp.vue'
 import AboutUs from '../views/AboutUs.vue'
+import Publish from '../views/PublishProduct.vue'
 
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: '/about-us',
     name: 'about-us',
     component: AboutUs
+  },
+  {
+    path: '/publish',
+    name: 'publish',
+    component: Publish
   }
 
 ]

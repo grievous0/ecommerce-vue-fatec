@@ -38,20 +38,13 @@
             </div>
             <div class="land-msg">
               <div class="upper-msg">
-                <img src="@/assets/img/brands/apple.svg" alt="" class="logo" />
+                <img src="@/assets/founditlogoteste.png" alt="" class="logo" />
                 <div class="msg">
-                  <h2>The Apple week is here!</h2>
-                  <h4>Save up to a 40% on MacBook Series this week.</h4>
-                </div>
-                <div class="features">
-                  <p>Supercharged by</p>
-                  <img class="M1" src="@/assets/img/extras/M1Pro.png" alt="" />
-                  <p>and</p>
-                  <img class="M1" src="@/assets/img/extras/M1ProMax.png" alt="" />
+                  <h2>Até 30% off em Elêtronicos</h2>
+                  <h4 class="semanabf">Semana Black Friday</h4>
                 </div>
                 <div class="links">
-                  <a href="" class="link">Learn more ></a>
-                  <a href="" class="link">Buy ></a>
+                  <a href="" class="link">Ver Ofertas</a>
                 </div>
               </div>
             </div>
@@ -60,7 +53,6 @@
         <div class="carousel-item">
           <div class="landing">
             <div class="land-msg">
-              <img src="@/assets/img/brands/apple.svg" alt="" class="logo" />
               <div class="upper-msg">
                 <h3>
                   Get <span class="supercharged">supercharged</span> for college.
@@ -150,8 +142,6 @@
   </template>
   
   <script>
-  // @ is an alias to /src
-  
   export default {};
   </script>
   
@@ -205,12 +195,16 @@
   }
   
   a {
-    color: var(--blue);
+    color: var(--yellow);
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
+  }
+
+  .semanabf{
+   color: var(--blue);
   }
   
   .upper-msg > h3 {
@@ -235,7 +229,7 @@
     justify-content: center;
   }
   .logo {
-    width: 50px;
+    width: 120px;
     margin: 1rem;
   }
   .land-img {

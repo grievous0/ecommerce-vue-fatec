@@ -1,35 +1,103 @@
 <template>
-    <section class="product-line">
-      <div class="messages">
-        <h3 class="message">
-        </h3>
-      </div>
+  <section class="product-line">
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
       
-        <h2 class="title">
-          <span class="highlight">Produtos em destaque</span>
-        </h2>
+    <h2>
+      <span class="highlight">Produtos em destaque</span>
+    </h2>
+
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
         
-      <div class="product-cards">
-        <div class="card" 
-          v-for="(product, index) in products" 
-          :key="index"
-        >
-          <div class="card-img">
-            <img
-              :src="product.image"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-          <div class="product-info">
+    <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in featuredProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
             <h4 class="product-name">{{product.name}}</h4>
             <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
-            <a href="#" class="cart">Adicionar no Carrinho</a>
-          </div>
+            <a @click="addToCart(product)" class="cart">Adicionar no Carrinho</a>
+        </div>
       </div>
-    </div>
-    </section>
-  </template>
+  </div>
+
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Produtos com desconto</span>
+  </h2>
+  
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in discountedProducts" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><strike>R${{product.oldPrice}}</strike> <span>R${{product.price}}</span></p>
+            <a class="cart" @click="addToCart(product)">Adicionar no Carrinho</a>
+        </div>
+      </div>
+  </div>
+  
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+
+  <h2 class="title">
+    <span class="highlight">Seus produtos</span>
+  </h2>
+
+  <div class="messages">
+      <h3 class="message highlight"></h3>
+  </div>
+  
+  <div class="product-cards">
+      <div class="card" 
+        v-for="(product, index) in products" 
+        :key="index"
+      >
+        <div class="card-img">
+          <img
+            :src="product.image"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+            <h4 class="product-name">{{product.name}}</h4>
+            <p class="price"><span>R${{product.price}}</span></p>
+            <a class="delete" @click="deleteProduct(index)">Deletar</a>
+        </div>
+      </div>
+  </div>
+      
+  </section>
+</template>
   
 <script>
 import axios from 'axios';
@@ -39,14 +107,95 @@ name: 'productsLine',
 
   data(){
       return {
-        products: ''
+        products: '',
+        featuredProducts: '',
+        discountedProducts: '',
+        cart: '',
+        totalPrice: 0,
       }
     },
   mounted(){
-    axios.get('http://localhost:3000/products/').then(response => {
-      this.products = response.data
-      console.log(this.products)
-    })
+    this.fetchFeaturedProducts();
+    this.fetchDiscountedProducts();
+    this.fetchProducts();
+  },
+  methods: {
+    fetchFeaturedProducts(){
+      axios.get('http://localhost:3000/featuredProducts/')
+      .then(response => {
+        this.featuredProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchDiscountedProducts(){
+      axios.get('http://localhost:3000/discountedProducts/')
+      .then(response => {
+        this.discountedProducts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    fetchProducts(){
+      axios.get('http://localhost:3000/products/')
+      .then(response => {
+        this.products = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    deleteProduct(index){
+      axios.delete(`http://localhost:3000/products/${index + 1}`)
+      .then(response => {
+        this.fetchProducts();
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+
+    addToCart(product){
+      axios.post('http://localhost:3000/cart/', product)
+      .then(response => {
+        this.fetchCart()
+        console.log(response);
+      })
+    },
+
+    fetchCart(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        this.cart = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+    countTotalPrice(){
+      axios.get('http://localhost:3000/cart/')
+      .then(response => {
+        response.data.forEach(product => {
+          this.totalPrice += product.price;
+        });
+      })
+    },
+    deleteFromCart(index){
+      axios.delete(`http://localhost:3000/cart/${index}`)
+      .then(response => {
+        console.log(response);
+        this.fetchCart();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
   }
 }
 </script>
@@ -83,20 +232,7 @@ name: 'productsLine',
     position: relative;
     margin: 1rem;
   }
-  .discounted .highlight {
-    color: var(--blue);
-  }
-  h2::after {
-    content: "";
-    width: 100px;
-    position: absolute;
-    margin: 0 auto;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.2);
-    left: 0;
-    right: 0;
-    bottom: -20px;
-  }
+
   .carousel {
     margin: 3rem auto;
     padding: 0 2rem;
@@ -170,15 +306,7 @@ name: 'productsLine',
     right: 0;
     color: rgba(0, 0, 0, 0.8);
   }
-  
-  .carousel .item-price {
-    font-size: 12px;
-    margin: 0;
-  }
-  .carousel .item-price span {
-    color: #86bd57;
-    font-size: 120%;
-  }
+ 
   .carousel-indicators {
     bottom: -40px;
   }
@@ -215,8 +343,10 @@ name: 'productsLine',
     border-radius: 1rem;
   }
   
-  .picks .highlight {
-    color: var(--green);
+  .highlight {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
   }
   .product-cards {
     display: flex;
@@ -235,6 +365,7 @@ name: 'productsLine',
     flex-direction: row;
     width: 20%;
     height: 360px;
+    background-color: rgb(236, 236, 236);
   }
   .card:hover {
     box-shadow: 0 0 10px #00000040;
@@ -264,15 +395,16 @@ name: 'productsLine',
   .product-name {
     padding: 0;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   .price {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .price span {
     font-size: 110%;
     color: var(--green);
+    font-weight: bold;
   }
   .stars {
     list-style: none;
@@ -295,9 +427,24 @@ name: 'productsLine',
   .cart {
     text-decoration: none;
     color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600
   }
+
+  .cart:hover {
+    color: black;
+  }
+  .delete {
+    text-decoration: none;
+    color: #bb8630;
+  }
+
+  .delete:hover {
+    color: rgb(156, 0, 0);
+  }
+
   .refurbished .highlight {
-    color: var(--yellow);
+    color: white
   }
   
   @media screen and (max-width: 1000px) {
