@@ -1,8 +1,8 @@
 <template>
     <footer class="footer">
-      <a href="#" class="go-top">
+      <!--<a href="#" class="go-top">
         <h3>Voltar ao topo</h3>
-      </a>
+      </a> ////-->
       <div class="footer-top">
         <div class="sections">
           <div class="logo-section">

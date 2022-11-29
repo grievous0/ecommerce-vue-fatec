@@ -29,13 +29,13 @@
                   <a href="" class="categoryLink">TV & Home Theater</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Computers & Tablets</a>
+                  <a href="" class="categoryLink">Computeres & Tablets</a>
                 </li>
                 <li class="category">
                   <a href="" class="categoryLink">Cameras & Video</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Phones</a>
+                  <a href="" class="categoryLink">Smartphones</a>
                 </li>
                 <li class="category">
                   <a href="" class="categoryLink">Audio</a>
@@ -47,13 +47,13 @@
                   <a href="" class="categoryLink">Smart Home</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Movies & Music</a>
+                  <a href="" class="categoryLink">Hardware</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Security & Internet</a>
+                  <a href="" class="categoryLink">Segurança & Internet</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Other</a>
+                  <a href="" class="categoryLink">Outros</a>
                 </li>
               </ul>
             </div>
@@ -104,8 +104,8 @@
                 <div class="productDesc">
                   <h5 class="productName">Airpods Pro</h5>
                   <div class="info">
-                    <h4 class="price">R$169.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 3</h4>
+                    <h4 class="price">R$1,690.00</h4>
+                    <h4 class="qty"><span>Quantidade: </span> 1</h4>
                   </div>
                 </div>
               </div>
@@ -120,8 +120,8 @@
                 <div class="productDesc">
                   <h5 class="productName">Macbook Air</h5>
                   <div class="info">
-                    <h4 class="price">R$649.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 1</h4>
+                    <h4 class="price">R$6,490.00</h4>
+                    <h4 class="qty"><span>quantidade: </span> 1</h4>
                   </div>
                 </div>
               </div>
@@ -136,19 +136,19 @@
                 <div class="productDesc">
                   <h5 class="productName">Xbox S</h5>
                   <div class="info">
-                    <h4 class="price">R$239.00</h4>
-                    <h4 class="qty"><span>Quantity: </span> 1</h4>
+                    <h4 class="price">R$2,390.00</h4>
+                    <h4 class="qty"><span>Quantidade: </span> 1</h4>
                   </div>
                 </div>
               </div>
               <div class="go-to-cart">
-                <router-link class="see" to="/checkout">See all ></router-link>
+                <router-link class="see" to="/checkout">Ver todos ></router-link>
               </div>
             </div>
             <hr />
             <div class="checkoutSection">
               <router-link class="checkout" to="/checkout"
-                >Continue to Checkout
+                >Coninuar para finalizar
               </router-link>
             </div>
           </div>

@@ -3,12 +3,12 @@
     <div class="checkOutCard">
       <!-- Billing section -->
       <div class="billing">
-        <h3 class="title"><i class="fa-solid fa-lock"></i>Secure Checkout</h3>
+        <h3 class="title"><i class="fa-solid fa-lock"></i>Entrega segura</h3>
         <hr />
         <div class="sections">
           <div class="section">
             <h4 @click="isShown = !isShown" class="subtitle">
-              <div><i class="fa-solid fa-1"></i>Delivery</div>
+              <div><i class="fa-solid fa-1"></i>Entrega</div>
               <i class="fa-solid fa-caret-down"></i>
             </h4>
             <Transition name="slide-fade">
@@ -16,35 +16,35 @@
                 <form action="" class="deliveryInfo">
                   <input class="email" type="email" placeholder="Email" />
                   <div class="name">
-                    <input type="text" placeholder="First Name" />
-                    <input type="text" placeholder="Last Name" />
+                    <input type="text" placeholder="Nome" />
+                    <input type="text" placeholder="Sobrenome" />
                   </div>
-                  <input type="text" placeholder="Address" />
+                  <input type="text" placeholder="Endereço" />
                   <div class="location">
-                    <input type="text" placeholder="Postal Code" />
-                    <input type="text" placeholder="City" />
-                    <input type="text" placeholder="State" />
-                    <input type="text" placeholder="Country" />
+                    <input type="text" placeholder="CEP" />
+                    <input type="text" placeholder="Cidade" />
+                    <input type="text" placeholder="Estado" />
+                    <input type="text" placeholder="Pais" />
                   </div>
                 </form>
                 <form action="" class="deliveryMethods">
                   <div class="method">
                     <h5></h5>
-                    <h5>Method</h5>
-                    <h5>Time</h5>
-                    <h5>Cost</h5>
+                    <h5>Metodo</h5>
+                    <h5>Dias</h5>
+                    <h5>Valor</h5>
                   </div>
                   <div class="method">
                     <input type="radio" name="gender" value="male" checked />
                     <h6>Standard</h6>
-                    <h6>5-7 days</h6>
-                    <h6>FREE</h6>
+                    <h6>5-7 dias</h6>
+                    <h6>Gratis</h6>
                   </div>
                   <div class="method">
                     <input type="radio" name="gender" value="male" />
                     <h6>Express</h6>
                     <h6>1-3 days</h6>
-                    <h6>R$5.99</h6>
+                    <h6>R$3.99</h6>
                   </div>
                 </form>
               </div>
@@ -52,16 +52,16 @@
           </div>
           <div class="section">
             <h4 @click="isShown = !isShown" class="subtitle">
-              <div><i class="fa-solid fa-2"></i>Payment</div>
+              <div><i class="fa-solid fa-2"></i>Pagamento</div>
               <i class="fa-solid fa-caret-down"></i>
             </h4>
             <Transition name="slide-fade">
               <div v-show="isShown" class="content">
                 <div class="cardSection">
                   <div class="card">
-                    <h4 class="cardNumber">1234 1234 1234 1234</h4>
-                    <h6 class="cardHolder">holder name</h6>
-                    <h6 class="cardDate">02/29</h6>
+                    <h4 class="cardNumber">000 0000 0000 0000</h4>
+                    <h6 class="cardHolder">Titular do cartão</h6>
+                    <h6 class="cardDate">00/00</h6>
                     <img
                       src="https://www.svgrepo.com/show/362011/mastercard.svg"
                       alt=""
@@ -70,22 +70,37 @@
                   </div>
                 </div>
                 <div class="paymentOptions">
-                  <h5 class="payMethods">Payment methods accepted:</h5>
+                  <h5 class="payMethods">bandeiras aceitas:</h5>
                   <div class="payments">
                     <img
                       class="payMethod"
-                      src="https://www.svgrepo.com/show/362033/visa.svg"
-                      alt="visa"
+                      src="https://imagensemoldes.com.br/wp-content/uploads/2020/06/Bandeira-de-Cart%C3%A3o-PNG-Elo-1280x720.png"
+                      alt="Elo"
                     />
                     <img
                       class="payMethod"
-                      src="https://www.svgrepo.com/show/362011/mastercard.svg"
-                      alt="mastercard"
+                      src="https://logosmarcas.net/wp-content/uploads/2020/09/Mastercard-Logo.png"
+                      alt="MasterCard"
                     />
                     <img
                       class="payMethod"
-                      src="https://www.svgrepo.com/show/328145/paypal.svg"
-                      alt="paypal"
+                      src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-1.png"
+                      alt="Visa"
+                    />
+                    <img
+                      class="payMethod"
+                      src="https://imagensemoldes.com.br/wp-content/uploads/2020/06/Bandeira-de-Cart%C3%A3o-PNG-American-Express-1280x720.png"
+                      alt="American Express"
+                    />
+                    <img
+                      class="payMethod"
+                      src="https://redetriboo.com.br/wp-content/uploads/2021/01/hipercard-1.png?w=900"
+                      alt="Hipercard"
+                    />
+                    <img
+                      class="payMethod"
+                      src="https://redetriboo.com.br/wp-content/uploads/2021/01/dinersclub-1.png?w=900  "
+                      alt="Diners Club"
                     />
                   </div>
                 </div>
@@ -94,24 +109,24 @@
                     <input
                       type="text"
                       class="cardNo"
-                      placeholder="Cardholder Name"
+                      placeholder="Titular do cartão"
                     />
                     <div class="cardDetails">
-                      <input type="number" placeholder="Card Number" />
+                      <input type="number" placeholder="Numero do Cartão" />
                       <input type="number" placeholder="MM/YY" />
                       <input type="number" placeholder="CVV" />
                     </div>
                   </form>
                   <div class="action">
                     <button class="continue">
-                      Continue <i class="fa-solid fa-arrow-right-long"></i>
+                      Continuar <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
-                    or
+                    ou
                     <button class="continue paypal">
                       <img
                         class="paypalImg"
-                        src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png"
-                        alt=""
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg/2560px-Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg.png"
+                        alt="pix"
                       />
                     </button>
                   </div>
@@ -122,8 +137,8 @@
           <hr />
           <div class="section">
             <p class="disclaimer">
-              By placing your order, you agree to our
-              <a href="">Terms & Conditions</a> of GeekCave.
+              Ao continuar a compra você concorda com
+              <a href="">Terms & Conditions</a>
             </p>
           </div>
         </div>
@@ -131,7 +146,7 @@
       <!-- Checkout section -->
       <div class="check">
         <h3 class="title">
-          <i class="fa-solid fa-cart-shopping"></i>Your Order
+          <i class="fa-solid fa-cart-shopping"></i>Seu Pedido
         </h3>
         <hr />
       </div>
@@ -182,7 +197,7 @@ section {
   padding: 0.3rem 0.5rem;
 }
 .subtitle:hover {
-  background-color: var(--grey);
+  background-color: #FAB23D;
 }
 .subtitle div {
   display: flex;
@@ -271,15 +286,15 @@ input[type="radio"] {
   gap: 1rem;
 }
 .payMethod {
-  width: 2rem;
+  width: 3rem;
 }
 
 .card {
   background: linear-gradient(
     90deg,
     rgb(36, 36, 41) 0%,
-    rgb(68, 68, 106) 35%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(99, 99, 99) 35%,
+    rgb(20, 20, 20) 100%
   );
   width: 52%;
   height: 16vw;
