@@ -1,8 +1,8 @@
 <template>
     <footer class="footer">
-      <a href="#" class="go-top">
+      <!--<a href="#" class="go-top">
         <h3>Voltar ao topo</h3>
-      </a>
+      </a> ////-->
       <div class="footer-top">
         <div class="sections">
           <div class="logo-section">
@@ -34,20 +34,6 @@
                     <p>+55 19 98080-9976</p>
                   </div>
                 </li>
-                <li class="social">
-                  <a class="socialLink" href="">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a class="socialLink" href="">
-                    <i class="fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a class="socialLink" href="">
-                    <i class="fa-brands fa-twitter"></i>
-                  </a>
-                  <a class="socialLink" href="">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
@@ -68,6 +54,7 @@
   
   <style scoped>
   .footer {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     bottom: 0;

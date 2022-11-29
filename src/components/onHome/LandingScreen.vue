@@ -55,21 +55,21 @@
             <div class="land-msg">
               <div class="upper-msg">
                 <h3>
-                  Get <span class="supercharged">supercharged</span> for college.
+                  Que tal um <span class="supercharged">SUPER DESCONTO?</span>
                 </h3>
-                <h5>Save on Mac or iPad. Get in instant gift card up to R$150.</h5>
+                <h5>Coloque um MAC ou um IPAD no seu carrinho ganhe R$500 de desconto.</h5>
                 <div class="buy-options">
                   <div class="mac">
-                    <h6>Buy Mac.</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Mac</h6>
+                    <a href="">Ver Modelos</a>
                   </div>
                   <div class="ipad">
-                    <h6>Buy iPad.</h6>
-                    <a href="">Compare models.</a>
+                    <h6>iPad</h6>
+                    <a href="">Ver Modelos</a>
                   </div>
                 </div>
-                <p>Or</p>
-                <a href="">Explore Apple college accesories</a>
+                <p>Ou</p>
+                <a href="">Ver acessorios da linha Apple</a>
               </div>
             </div>
             <div class="land-img">
@@ -99,22 +99,21 @@
   
               <div class="upper-msg">
                 <h3>
-                  The war of the <span class="assistants">assistants</span> is
-                  here.
+                 Escolha seu lado na guerra de<span class="assistants"> assistentes</span>
                 </h3>
-                <h5>Buy one and get the other for half the price.</h5>
+                <h5>Compre um e ganhe 50% de desconto no outro</h5>
                 <div class="buy-options">
                   <div class="mac">
-                    <h6>Buy Google Devices</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Google Home</h6>
+                    <a href="">Ver modelos</a>
                   </div>
                   <div class="ipad">
-                    <h6>Buy Alexa Devices</h6>
-                    <a href="">Compare models.</a>
+                    <h6>Alexa Echo Dot</h6>
+                    <a href="">Ver modelos</a>
                   </div>
                 </div>
-                <p>Or</p>
-                <a href="">Explore smart accesories.</a>
+                <p>ou</p>
+                <a href="">Explorar outros produtos smart.</a>
               </div>
             </div>
           </div>

@@ -67,27 +67,34 @@ export default {
 <style scoped>
 
 .msg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  font-size: 1.5rem;
+
+    background-color: var(--blue);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-shadow: 0 0 20px var(--blue);
   }
 
   .publishForm {
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.8rem;
-    margin: 1rem 0 2rem 0;
+    gap: 2rem;
   }
 
   .nomeProduto {
-    width: 100%;
-    height: 2rem;
-    border: 1px solid var(--carbonLight);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    display: flex;
+    border: solid var(--carbon) 1px;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    appearance: none;
+    outline: none;
+    width: 20rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    transition: 0.3s;
   }
 
   .loginBtn {

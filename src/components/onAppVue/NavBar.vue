@@ -29,7 +29,7 @@
                   <a href="" class="categoryLink">TV e Som</a>
                 </li>
                 <li class="category">
-                  <a href="" class="categoryLink">Computadores e Tablets</a>
+                  <a href="" class="categoryLink">Computadorees e Tablets</a>
                 </li>
                 <li class="category">
                   <a href="" class="categoryLink">Camêra e Vídeo</a>
@@ -111,6 +111,9 @@
                     <i class="fa fa-trash-o delete-icon" @click="deleteFromCart(product.id)"></i>
                   </div>
                 </div>
+              </div>
+              <div class="go-to-cart">
+                <router-link class="see" to="/checkout">Ver tudo ></router-link>
               </div>
             </div>
             <hr />

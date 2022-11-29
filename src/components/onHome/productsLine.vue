@@ -365,7 +365,7 @@ name: 'productsLine',
     flex-direction: row;
     width: 20%;
     height: 360px;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(255, 255, 255);
   }
   .card:hover {
     box-shadow: 0 0 10px #00000040;
