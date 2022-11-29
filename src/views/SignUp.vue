@@ -38,7 +38,7 @@
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
               <p class="message">
-               Eu concordo com os <a href="">Termos</a> e <a href="">Privacidade</a>
+               Eu concordo com os <a href="">Termos</a>
               </p>
             </div>
             <button class="loginBtn" type="">Criar conta</button>
@@ -57,6 +57,7 @@
   </script>
   
   <style scoped>
+
   .signUpSection {
     display: flex;
     flex-direction: column;
@@ -105,7 +106,8 @@
     box-shadow: 0 0 10px var(--blue);
   }
   .rememberMe {
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,7 +115,8 @@
   .rememberMe p {
     margin: 0 0 0 0.2rem;
   }
-  .loginBtn {
+  .loginBtn { 
+    width: 20rem;
     border: solid 1px var(--blue);
     color: white;
     text-decoration: none;

@@ -64,36 +64,40 @@
       </div>
   </div>
   
-  <div class="messages">
-      <h3 class="message highlight"></h3>
-  </div>
-
-  <h2 class="title">
-    <span class="highlight">Seus produtos</span>
-  </h2>
-
-  <div class="messages">
-      <h3 class="message highlight"></h3>
-  </div>
   
-  <div class="product-cards">
-      <div class="card" 
-        v-for="(product, index) in products" 
-        :key="index"
-      >
-        <div class="card-img">
-          <img
-            :src="product.image"
-            class="img-fluid"
-            alt=""
-          />
+
+  <div v-if="isProducts">
+    <div class="messages">
+      <h3 class="message highlight"></h3>
+    </div>
+
+    <h2 class="title">
+      <span class="highlight">Seus produtos</span>
+    </h2>
+
+    <div class="messages">
+        <h3 class="message highlight"></h3>
+    </div>
+    
+    <div class="product-cards">
+        <div class="card" 
+          v-for="(product, index) in products" 
+          :key="index"
+        >
+          <div class="card-img">
+            <img
+              :src="product.image"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <div class="product-info">
+              <h4 class="product-name">{{product.name}}</h4>
+              <p class="price"><span>R${{product.price}}</span></p>
+              <a class="delete" @click="deleteProduct(index)">Deletar</a>
+          </div>
         </div>
-        <div class="product-info">
-            <h4 class="product-name">{{product.name}}</h4>
-            <p class="price"><span>R${{product.price}}</span></p>
-            <a class="delete" @click="deleteProduct(index)">Deletar</a>
-        </div>
-      </div>
+    </div>
   </div>
       
   </section>
@@ -112,6 +116,7 @@ name: 'productsLine',
         discountedProducts: '',
         cart: '',
         totalPrice: 0,
+        isProducts: false
       }
     },
   mounted(){
@@ -144,6 +149,9 @@ name: 'productsLine',
       axios.get('http://localhost:3000/products/')
       .then(response => {
         this.products = response.data;
+        if(this.products.length > 0){
+          this.isProducts = true;
+        }
       })
       .catch(error => {
         console.log(error);
