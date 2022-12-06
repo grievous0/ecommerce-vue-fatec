@@ -13,6 +13,7 @@
               type="text"
               name="name"
               placeholder="Insira seu nome"
+              v-model="name"
             />
             <label class="inputLabel" for="email">E-mail</label>
             <input
@@ -20,6 +21,7 @@
               type="text"
               name="email"
               placeholder="Insira seu email"
+              v-model="email"
             />
             <label class="inputLabel" for="password">Senha</label>
             <input
@@ -27,6 +29,7 @@
               type="password"
               name="password"
               placeholder="Insira uma senha"
+              v-model="password"
             />
             <label class="inputLabel" for="password">Confirmar senha</label>
             <input
@@ -34,6 +37,7 @@
               type="password"
               name="password"
               placeholder="Confirme sua senha"
+              v-model="password2"
             />
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
@@ -41,7 +45,7 @@
                Eu concordo com os <a href="">Termos</a>
               </p>
             </div>
-            <button class="loginBtn" type="">Criar conta</button>
+            <button class="loginBtn" @click="signUp">Criar conta</button>
           </form>
           <p class="join">
             Já tem uma conta?
@@ -53,7 +57,41 @@
   </template>
   
   <script>
-  export default {};
+  import axios from 'axios';
+
+  export default {
+    data() {
+      return {
+        name: '',
+        email: '',
+        password: '',
+        password2: '',
+      };
+    },
+    methods: {
+      signUp() {
+        if (this.password !== this.password2) {
+          alert('As senhas não coincidem');
+          return
+        }
+
+        axios
+          .post('http://localhost:3000/users', {
+            name: this.name,
+            email: this.email,
+            password: this.password,
+          })
+          .then((response) => {
+            console.log(response);
+            alert('Conta criada com sucesso!');
+            this.$router.push('/login');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+    },
+  };
   </script>
   
   <style scoped>

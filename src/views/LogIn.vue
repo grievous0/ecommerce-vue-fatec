@@ -6,25 +6,28 @@
       </div>
       <div class="loginCard">
         <div class="loginForm">
-          <form action="" class="login">
+          <form class="login">
             <input
               class="user"
               type="text"
               name=""
               placeholder="Email"
+              v-model="email"
             />
             <input
               class="password"
               type="password"
               name=""
               placeholder="Senha"
+              v-model="password"
             />
             <div class="rememberMe">
               <input type="checkbox" name="remember" />
               <p class="message">Lembrar de mim</p>
             </div>
-            <button class="loginBtn" type="">Login</button>
+            
           </form>
+          <button @click="login">Login</button>
           <div class="noPassword">
             <router-link class="forgotPassword" to=""
               >Esqueceu a senha?</router-link
@@ -40,7 +43,50 @@
   </template>
   
   <script>
-  export default {};
+  import axios from 'axios';
+
+  export default {
+    data() {
+      return {
+        email: '',
+        password: '',
+        users: []
+      };
+    },
+    mounted() {
+      this.getUsers()
+    },
+    methods: {
+      getUsers(){
+        axios.get('http://localhost:3000/users')
+        .then((response) => {
+          this.users = response.data
+          console.log(response.data)
+        })
+      },
+      login(){
+        if(this.email == '' || this.password == ''){
+          alert('Preencha todos os campos')
+          return
+        }
+
+        let user = this.users.find((user) => {
+          return user.email == this.email && user.password == this.password
+        })
+
+        if(!user){
+          alert('Usuário não encontrado, verifique os dados e tente novamente')
+          return
+        } else {
+          axios.patch(`http://localhost:3000/users/${user.id}`, {
+            login: true
+          })
+          alert('Login realizado com sucesso')
+          this.$router.push('/')
+        }
+      },
+    },
+  };
   </script>
   
   <style scoped>

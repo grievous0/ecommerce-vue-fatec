@@ -102,5 +102,32 @@
     }
   ],
   "products": [],
-  "cart": []
+  "cart": [],
+  "users": [
+    {
+      "name": "João",
+      "email": "jvopereira2004@gmail.com",
+      "password": "123",
+      "login": false,
+      "id": 1
+    },
+    {
+      "name": "123",
+      "email": "123",
+      "password": "123",
+      "login": true,
+      "id": 2
+    },
+    {
+      "name": "joao",
+      "email": "joao",
+      "password": "joao",
+      "login": false,
+      "id": 3
+    },
+    {
+      "login": true,
+      "id": 4
+    }
+  ]
 }
