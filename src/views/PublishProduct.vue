@@ -70,17 +70,11 @@ export default {
   
   methods: {
     submitForm(){
-      axios.post('http://localhost:3000/products', {
-        "name": this.form.name,
-        "price": this.form.price,
-        "image": 'https://m.media-amazon.com/images/I/71wt9VtPCWL.jpg'
+      axios.post('http://localhost:3030/publicar', {
+        "nome_produto": this.form.name,
+        "preco": this.form.price,
+        "imagem": "https://m.media-amazon.com/images/I/71bhWgQK-cL._AC_SX679_.jpg",
       })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      }) 
     },
   },
 };

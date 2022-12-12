@@ -45,8 +45,9 @@
                Eu concordo com os <a href="">Termos</a>
               </p>
             </div>
-            <button class="loginBtn" @click="signUp">Criar conta</button>
+            
           </form>
+          <button class="loginBtn" @click="signUp">Criar conta</button>
           <p class="join">
             Já tem uma conta?
             <router-link class="toJoin" to="/login">Login</router-link>
@@ -75,20 +76,19 @@
           return
         }
 
-        axios
-          .post('http://localhost:3000/users', {
-            name: this.name,
-            email: this.email,
-            password: this.password,
-          })
-          .then((response) => {
-            console.log(response);
-            alert('Conta criada com sucesso!');
-            this.$router.push('/login');
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        axios.post('http://localhost:3030/cadastrar', {
+          "nome": this.name,
+          "email": this.email,
+          "senha": this.password
+        })
+        .then(response => {
+          console.log(response);
+          alert('Conta criada com sucesso!')
+          this.$router.push('/login')
+        })
+        .catch(error => {
+          console.log(error);
+        });
       },
     },
   };

@@ -66,7 +66,7 @@
   
   
 
-  <div v-if="isProducts">
+  <div >
     <div class="messages">
       <h3 class="message highlight"></h3>
     </div>
@@ -81,20 +81,20 @@
     
     <div class="product-cards">
         <div class="card" 
-          v-for="(product, index) in products" 
+          v-for="(produto, index) in produtos" 
           :key="index"
         >
           <div class="card-img">
             <img
-              :src="product.image"
+              :src="produto.imagem"
               class="img-fluid"
               alt=""
             />
           </div>
           <div class="product-info">
-              <h4 class="product-name">{{product.name}}</h4>
-              <p class="price"><span>R${{product.price}}</span></p>
-              <a class="delete" @click="deleteProduct(index)">Deletar</a>
+              <h4 class="product-name">{{produto.nome_produto}}</h4>
+              <p class="price"><span>R${{produto.preco}}</span></p>
+              <a class="delete" @click="deleteProduct(produto.nome_produto)">Deletar</a>
           </div>
         </div>
     </div>
@@ -116,15 +116,24 @@ name: 'productsLine',
         discountedProducts: '',
         cart: '',
         totalPrice: 0,
-        isProducts: false
+        isProducts: false,
+        produtos: []
       }
     },
   mounted(){
     this.fetchFeaturedProducts();
     this.fetchDiscountedProducts();
     this.fetchProducts();
+    this.test()
   },
   methods: {
+    test(){
+      axios.get('http://localhost:3030/produtos')
+      .then(response => {
+        console.log(response.data);
+        this.produtos = response.data;
+      })
+    },
     fetchFeaturedProducts(){
       axios.get('http://localhost:3000/featuredProducts/')
       .then(response => {
@@ -158,14 +167,12 @@ name: 'productsLine',
       })
     },
 
-    deleteProduct(index){
-      axios.delete(`http://localhost:3000/products/${index + 1}`)
-      .then(response => {
-        this.fetchProducts();
+    deleteProduct(nome_produto){
+      axios.post("http://localhost:3030/produtos/deletar", {
+        nome_produto: nome_produto
+      }).then(response => {
         console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
+        this.test();
       })
     },
 

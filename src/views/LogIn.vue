@@ -49,41 +49,32 @@
     data() {
       return {
         email: '',
-        password: '',
-        users: []
+        password: ''
       };
     },
     mounted() {
-      this.getUsers()
     },
     methods: {
-      getUsers(){
-        axios.get('http://localhost:3000/users')
-        .then((response) => {
-          this.users = response.data
-          console.log(response.data)
-        })
-      },
       login(){
         if(this.email == '' || this.password == ''){
           alert('Preencha todos os campos')
           return
         }
 
-        let user = this.users.find((user) => {
-          return user.email == this.email && user.password == this.password
+        axios.post('http://localhost:3030/login', {
+          "email": this.email,
+          "senha": this.password
         })
+        .then(res => {
+          console.log(res.status)
 
-        if(!user){
-          alert('Usuário não encontrado, verifique os dados e tente novamente')
-          return
-        } else {
-          axios.patch(`http://localhost:3000/users/${user.id}`, {
-            login: true
-          })
-          alert('Login realizado com sucesso')
-          this.$router.push('/')
-        }
+          if(res.status == 200){
+            alert('Login realizado com sucesso')
+            this.$router.push('/')
+          } else {
+            alert('Email ou senha incorretos, tente novamente')
+          }
+        })
       },
     },
   };
